@@ -1,0 +1,102 @@
+@use "var" as *;
+@use "mixins" as *;
+
+*, *::after, *::before:not(i){
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-family: "Nunito", sans-serif;
+}
+html, body, *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-family: "Nunito", sans-serif;
+}
+
+body{
+    background-color: whitesmoke;
+    height: 100vh;
+    @include flex-center;
+}
+
+#pokedexContainer{
+    width: 90%;
+    height: 60%;
+    @include debug;
+    @include flex-center;
+}
+
+#leftSideContainer{
+    width: 50%;
+    height: 100%;
+    @include debug;
+    background: red;
+
+
+    .lightsContainer{
+        height: 20%;
+        @include debug;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+
+        .camera{
+            height: calc(100% - 10px);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            @include debug;
+            margin-left: 5px;
+        }
+
+        .lights{
+            height: 20px;
+            width: 60px;
+            margin-right: auto;
+            margin-bottom: auto;
+            margin-top: 10px;
+            @include flex-center;
+            justify-content: space-between;
+            gap: 5px;
+
+            .smallLight{
+                height: 100%;
+                aspect-ratio: 1;
+                border-radius: 50%;
+
+                &.redLight{
+                    background-color: red;
+                }
+                &.yellowLight{
+                    background-color: yellow;
+                }
+                &.greenLight{
+                    background-color: green;
+                }
+            }
+        }
+
+        .tab{
+            width: 33%;
+            height: 50%;
+            background-color: $main-color;
+            margin-top: auto;
+            border-top-left-radius: 30px;
+        }
+    }
+
+    .displayContainer{
+        height: 80%;
+        @include debug;
+    }
+}
+
+#rightSideContainer{
+    width: 50%;
+    height: 100%;
+    @include debug;
+    background: orange;
+}

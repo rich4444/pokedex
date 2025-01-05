@@ -1,0 +1,103 @@
+*, *::after, *::before:not(i) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-family: "Nunito", sans-serif;
+}
+
+html, body, * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  background-color: whitesmoke;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#pokedexContainer {
+  width: 90%;
+  height: 60%;
+  border: 2px solid lime;
+  background-color: rgba(0, 255, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#leftSideContainer {
+  width: 50%;
+  height: 100%;
+  border: 2px solid lime;
+  background-color: rgba(0, 255, 0, 0.3);
+  background: red;
+}
+#leftSideContainer .lightsContainer {
+  height: 20%;
+  border: 2px solid lime;
+  background-color: rgba(0, 255, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#leftSideContainer .lightsContainer .camera {
+  height: calc(100% - 10px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid lime;
+  background-color: rgba(0, 255, 0, 0.3);
+  margin-left: 5px;
+}
+#leftSideContainer .lightsContainer .lights {
+  height: 20px;
+  width: 60px;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+#leftSideContainer .lightsContainer .lights .smallLight {
+  height: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+#leftSideContainer .lightsContainer .lights .smallLight.redLight {
+  background-color: red;
+}
+#leftSideContainer .lightsContainer .lights .smallLight.yellowLight {
+  background-color: yellow;
+}
+#leftSideContainer .lightsContainer .lights .smallLight.greenLight {
+  background-color: green;
+}
+#leftSideContainer .lightsContainer .tab {
+  width: 33%;
+  height: 50%;
+  background-color: red;
+  margin-top: auto;
+  border-top-left-radius: 30px;
+}
+#leftSideContainer .displayContainer {
+  height: 80%;
+  border: 2px solid lime;
+  background-color: rgba(0, 255, 0, 0.3);
+}
+
+#rightSideContainer {
+  width: 50%;
+  height: 100%;
+  border: 2px solid lime;
+  background-color: rgba(0, 255, 0, 0.3);
+  background: orange;
+}/*# sourceMappingURL=styles.css.map */
