@@ -1,14 +1,9 @@
 @use "var" as *;
 @use "mixins" as *;
 
-*, *::after, *::before:not(i){
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
-    font-family: "Nunito", sans-serif;
-}
-html, body, *{
+*,
+*::after,
+*::before:not(i) {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,45 +11,62 @@ html, body, *{
     font-family: "Nunito", sans-serif;
 }
 
-body{
+html,
+body,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-family: "Nunito", sans-serif;
+}
+
+body {
     background-color: whitesmoke;
     height: 100vh;
     @include flex-center;
 }
 
-#pokedexContainer{
+#pokedexContainer {
     width: 90%;
-    height: 60%;
-    @include debug;
+    max-width: 600px;
+    aspect-ratio: 1.4;
+
     @include flex-center;
 }
 
-#leftSideContainer{
+#leftSideContainer {
     width: 50%;
     height: 100%;
-    @include debug;
-    background: red;
+    background: $main-color;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-right: 5%;
 
 
-    .lightsContainer{
+    .lightsContainer {
         height: 20%;
-        @include debug;
         display: flex;
         align-items: center;
         gap: 10px;
+        background-color: $main-dark-color;
 
 
-        .camera{
-            height: calc(100% - 10px);
+        .camera {
+            height: calc(100% - 20px);
             aspect-ratio: 1;
             border-radius: 50%;
-            @include debug;
-            margin-left: 5px;
+
+            margin-left: 15px;
+            background-color: cyan;
+            border: 5px solid white;
+
+            @include reflection;
         }
 
-        .lights{
-            height: 20px;
-            width: 60px;
+        .lights {
+            height: 25%;
+            width: 30%;
             margin-right: auto;
             margin-bottom: auto;
             margin-top: 10px;
@@ -62,24 +74,29 @@ body{
             justify-content: space-between;
             gap: 5px;
 
-            .smallLight{
+            .smallLight {
                 height: 100%;
                 aspect-ratio: 1;
                 border-radius: 50%;
 
-                &.redLight{
-                    background-color: red;
+                &.redLight {
+                    background-color: $main-color;
+                    @include reflection;
                 }
-                &.yellowLight{
+
+                &.yellowLight {
                     background-color: yellow;
+                    @include reflection;
                 }
-                &.greenLight{
+
+                &.greenLight {
                     background-color: green;
+                    @include reflection;
                 }
             }
         }
 
-        .tab{
+        .tab {
             width: 33%;
             height: 50%;
             background-color: $main-color;
@@ -88,15 +105,311 @@ body{
         }
     }
 
-    .displayContainer{
+    .displayContainer {
         height: 80%;
-        @include debug;
+        padding: 10px;
+
+
+        .display {
+            background-color: beige;
+            height: 55%;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            border-radius: 5px;
+            border-bottom-left-radius: 20px;
+            box-shadow: 1px 1px 2px rgb(58, 58, 58);
+
+            .topLights {
+                height: 10%;
+                @include flex-center;
+                gap: 30px;
+
+
+                .light {
+                    height: 100%;
+                    aspect-ratio: 1;
+                    background-color: $main-color;
+                    border-radius: 50%;
+
+                    @include reflection;
+                }
+            }
+
+            .pokemonPicture {
+                height: 75%;
+                width: 85%;
+                margin: auto;
+                background-color: black;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    filter: drop-shadow(0px 0px 2px gray)
+                }
+            }
+
+            .bottomLights {
+                height: 15%;
+                @include flex-center;
+                justify-content: space-between;
+                width: 85%;
+                margin: auto;
+
+                .light {
+                    height: 100%;
+                    aspect-ratio: 1;
+                    background-color: $main-color;
+                    border-radius: 50%;
+
+                    @include reflection;
+                }
+
+                .lines {
+                    height: 100%;
+                    aspect-ratio: 1.3;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    span {
+                        height: 15%;
+                        width: 100%;
+                        background-color: black;
+                        border-radius: 30px
+                    }
+                }
+            }
+        }
+
+        .controls {
+            height: 45%;
+            @include flex-center;
+
+            .circleContainer {
+                height: 100%;
+                width: 25%;
+
+                .circle {
+                    width: 80%;
+                    aspect-ratio: 1;
+                    background-color: black;
+                    border-radius: 50%;
+                    margin: auto;
+                    margin-top: 25%;
+                }
+            }
+
+            .panels {
+                height: 100%;
+                width: 45%;
+
+                .buttons {
+                    width: 90%;
+                    height: 8%;
+                    @include flex-center;
+                    gap: 10%;
+                    margin-top: 10%;
+
+                    span {
+                        width: 50%;
+                        height: 100%;
+                        background-color: blue;
+                        border-radius: 30px;
+                        border: 2px solid black;
+
+                        &:first-child {
+                            background-color: $main-color;
+                        }
+                    }
+                }
+
+                .panel {
+                    width: 80%;
+                    height: 40%;
+                    margin-top: 10%;
+                    background-color: green;
+                    border-radius: 5px;
+                    border: 2px solid black;
+                }
+            }
+
+            .cross {
+                height: 100%;
+                width: 30%;
+                position: relative;
+
+
+                @include flex-center;
+
+                span {
+                    width: 80%;
+                    height: 17%;
+                    background-color: black;
+                    border-radius: 5px;
+
+                    &:first-child {
+                        position: absolute;
+                        rotate: 90deg;
+                    }
+                }
+            }
+        }
     }
 }
 
-#rightSideContainer{
-    width: 50%;
+#centerPiece {
+    width: 5%;
     height: 100%;
-    @include debug;
-    background: orange;
+    border-radius: 0 10px 10px 0;
+    margin-top: auto;
+    background-color: $main-dark-color;
+    margin-left: -5%;
+}
+
+#rightSideContainer {
+    width: 47%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+
+
+    .tabContainer {
+        height: 20%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+
+        .tab {
+            width: 33%;
+            height: 50%;
+            background-color: $main-color;
+            margin-top: auto;
+            border-top-right-radius: 30px;
+        }
+    }
+
+    .controlsContainer {
+        border-top-right-radius: 10px;
+        background-color: $main-color;
+        width: 100%;
+        height: 80%;
+        padding: 5%;
+        @include flex-center;
+        flex-direction: column;
+        justify-content: start;
+        gap: 3%;
+
+
+        .textDisplay {
+            height: 30%;
+            width: 100%;
+            background-color: black;
+            border-radius: 5px;
+            color: white;
+            padding: 5%;
+        }
+
+        .typeButtonsContainer {
+            height: 30%;
+            width: 100%;
+            @include flex-center;
+            flex-wrap: wrap;
+
+            .typeButton {
+                width: 20%;
+                height: 33.33333333%;
+                background-color: cyan;
+                border: 3px solid rgb(8, 110, 110);
+
+                &:nth-child(1) {
+                    border-radius: 5px 0 0 0;
+                }
+
+                &:nth-child(5) {
+                    border-radius: 0 5px 0 0;
+                }
+
+                &:nth-child(11) {
+                    border-radius: 0 0 0 5px;
+                }
+
+                &:nth-child(15) {
+                    border-radius: 0 0 5px 0;
+                }
+            }
+        }
+
+        .buttonsContainer {
+            height: 25%;
+            width: 100%;
+            @include flex-center;
+            gap: 15%;
+
+            .leftButtons {
+                height: 100%;
+                width: 50%;
+                @include flex-center;
+
+                .button {
+                    width: 50%;
+                    height: 50%;
+                    background-color: gray;
+                    border: 3px solid rgb(46, 46, 46);
+                    margin-bottom: auto;
+                    border-radius: 5px;
+                }
+            }
+
+            .rightButtons {
+                height: 100%;
+                width: 50%;
+                @include flex-center;
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 15%;
+
+                .slimButtons {
+                    width: 100%;
+                    height: 20%;
+                    @include flex-center;
+                    gap: 10%;
+
+                    .slimButton {
+                        height: 100%;
+                        width: 50%;
+                        background-color: black;
+                        border-radius: 30px;
+                    }
+                }
+
+                .roundButton {
+                    height: 80%;
+                    aspect-ratio: 1;
+                    border-radius: 50%;
+                    background-color: orange;
+                }
+            }
+        }
+
+
+        .speakersContainer {
+            height: 15%;
+            width: 100%;
+            @include flex-center;
+            gap: 15%;
+
+            .speaker {
+                width: 50%;
+                height: 100%;
+                background-color: black;
+                border-radius: 5px;
+            }
+        }
+    }
 }

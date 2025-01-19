@@ -9,3 +9,19 @@
     border: 2px solid lime;
     background-color: rgba(0, 255, 0, 0.3);
 }
+
+@mixin reflection {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 30%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.6);
+        top: 15%;
+        left: 15%;
+        box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
+    }
+}
