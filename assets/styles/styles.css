@@ -1,4 +1,6 @@
-*, *::after, *::before:not(i) {
+*,
+*::after,
+*::before:not(i) {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,7 +8,9 @@
   font-family: "Nunito", sans-serif;
 }
 
-html, body, * {
+html,
+body,
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -24,9 +28,8 @@ body {
 
 #pokedexContainer {
   width: 90%;
-  height: 60%;
-  border: 2px solid lime;
-  background-color: rgba(0, 255, 0, 0.3);
+  max-width: 600px;
+  aspect-ratio: 1.4;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,29 +38,41 @@ body {
 #leftSideContainer {
   width: 50%;
   height: 100%;
-  border: 2px solid lime;
-  background-color: rgba(0, 255, 0, 0.3);
   background: red;
+  border-radius: 10px;
+  overflow: hidden;
+  padding-right: 5%;
 }
 #leftSideContainer .lightsContainer {
   height: 20%;
-  border: 2px solid lime;
-  background-color: rgba(0, 255, 0, 0.3);
   display: flex;
   align-items: center;
   gap: 10px;
+  background-color: brown;
 }
 #leftSideContainer .lightsContainer .camera {
-  height: calc(100% - 10px);
+  height: calc(100% - 20px);
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 2px solid lime;
-  background-color: rgba(0, 255, 0, 0.3);
-  margin-left: 5px;
+  margin-left: 15px;
+  background-color: cyan;
+  border: 5px solid white;
+  position: relative;
+}
+#leftSideContainer .lightsContainer .camera::after {
+  content: "";
+  position: absolute;
+  width: 30%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  top: 15%;
+  left: 15%;
+  box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
 }
 #leftSideContainer .lightsContainer .lights {
-  height: 20px;
-  width: 60px;
+  height: 25%;
+  width: 30%;
   margin-right: auto;
   margin-bottom: auto;
   margin-top: 10px;
@@ -74,12 +89,48 @@ body {
 }
 #leftSideContainer .lightsContainer .lights .smallLight.redLight {
   background-color: red;
+  position: relative;
+}
+#leftSideContainer .lightsContainer .lights .smallLight.redLight::after {
+  content: "";
+  position: absolute;
+  width: 30%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  top: 15%;
+  left: 15%;
+  box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
 }
 #leftSideContainer .lightsContainer .lights .smallLight.yellowLight {
   background-color: yellow;
+  position: relative;
+}
+#leftSideContainer .lightsContainer .lights .smallLight.yellowLight::after {
+  content: "";
+  position: absolute;
+  width: 30%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  top: 15%;
+  left: 15%;
+  box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
 }
 #leftSideContainer .lightsContainer .lights .smallLight.greenLight {
   background-color: green;
+  position: relative;
+}
+#leftSideContainer .lightsContainer .lights .smallLight.greenLight::after {
+  content: "";
+  position: absolute;
+  width: 30%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  top: 15%;
+  left: 15%;
+  box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
 }
 #leftSideContainer .lightsContainer .tab {
   width: 33%;
@@ -90,14 +141,306 @@ body {
 }
 #leftSideContainer .displayContainer {
   height: 80%;
-  border: 2px solid lime;
-  background-color: rgba(0, 255, 0, 0.3);
+  padding: 10px;
+}
+#leftSideContainer .displayContainer .display {
+  background-color: beige;
+  height: 55%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-radius: 5px;
+  border-bottom-left-radius: 20px;
+  box-shadow: 1px 1px 2px rgb(58, 58, 58);
+}
+#leftSideContainer .displayContainer .display .topLights {
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+#leftSideContainer .displayContainer .display .topLights .light {
+  height: 100%;
+  aspect-ratio: 1;
+  background-color: red;
+  border-radius: 50%;
+  position: relative;
+}
+#leftSideContainer .displayContainer .display .topLights .light::after {
+  content: "";
+  position: absolute;
+  width: 30%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  top: 15%;
+  left: 15%;
+  box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
+}
+#leftSideContainer .displayContainer .display .pokemonPicture {
+  height: 75%;
+  width: 85%;
+  margin: auto;
+  background-color: black;
+}
+#leftSideContainer .displayContainer .display .pokemonPicture img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  filter: drop-shadow(0px 0px 2px gray);
+}
+#leftSideContainer .displayContainer .display .bottomLights {
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 85%;
+  margin: auto;
+}
+#leftSideContainer .displayContainer .display .bottomLights .light {
+  height: 100%;
+  aspect-ratio: 1;
+  background-color: red;
+  border-radius: 50%;
+  position: relative;
+}
+#leftSideContainer .displayContainer .display .bottomLights .light::after {
+  content: "";
+  position: absolute;
+  width: 30%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  top: 15%;
+  left: 15%;
+  box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
+}
+#leftSideContainer .displayContainer .display .bottomLights .lines {
+  height: 100%;
+  aspect-ratio: 1.3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#leftSideContainer .displayContainer .display .bottomLights .lines span {
+  height: 15%;
+  width: 100%;
+  background-color: black;
+  border-radius: 30px;
+}
+#leftSideContainer .displayContainer .controls {
+  height: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#leftSideContainer .displayContainer .controls .circleContainer {
+  height: 100%;
+  width: 25%;
+}
+#leftSideContainer .displayContainer .controls .circleContainer .circle {
+  width: 80%;
+  aspect-ratio: 1;
+  background-color: black;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 25%;
+}
+#leftSideContainer .displayContainer .controls .panels {
+  height: 100%;
+  width: 45%;
+}
+#leftSideContainer .displayContainer .controls .panels .buttons {
+  width: 90%;
+  height: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+  margin-top: 10%;
+}
+#leftSideContainer .displayContainer .controls .panels .buttons span {
+  width: 50%;
+  height: 100%;
+  background-color: blue;
+  border-radius: 30px;
+  border: 2px solid black;
+}
+#leftSideContainer .displayContainer .controls .panels .buttons span:first-child {
+  background-color: red;
+}
+#leftSideContainer .displayContainer .controls .panels .panel {
+  width: 80%;
+  height: 40%;
+  margin-top: 10%;
+  background-color: green;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+#leftSideContainer .displayContainer .controls .cross {
+  height: 100%;
+  width: 30%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#leftSideContainer .displayContainer .controls .cross span {
+  width: 80%;
+  height: 17%;
+  background-color: black;
+  border-radius: 5px;
+}
+#leftSideContainer .displayContainer .controls .cross span:first-child {
+  position: absolute;
+  rotate: 90deg;
+}
+
+#centerPiece {
+  width: 5%;
+  height: 100%;
+  border-radius: 0 10px 10px 0;
+  margin-top: auto;
+  background-color: brown;
+  margin-left: -5%;
 }
 
 #rightSideContainer {
+  width: 47%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+}
+#rightSideContainer .tabContainer {
+  height: 20%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#rightSideContainer .tabContainer .tab {
+  width: 33%;
+  height: 50%;
+  background-color: red;
+  margin-top: auto;
+  border-top-right-radius: 30px;
+}
+#rightSideContainer .controlsContainer {
+  border-top-right-radius: 10px;
+  background-color: red;
+  width: 100%;
+  height: 80%;
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  gap: 3%;
+}
+#rightSideContainer .controlsContainer .textDisplay {
+  height: 30%;
+  width: 100%;
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  padding: 5%;
+}
+#rightSideContainer .controlsContainer .typeButtonsContainer {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#rightSideContainer .controlsContainer .typeButtonsContainer .typeButton {
+  width: 20%;
+  height: 33.33333333%;
+  background-color: cyan;
+  border: 3px solid rgb(8, 110, 110);
+}
+#rightSideContainer .controlsContainer .typeButtonsContainer .typeButton:nth-child(1) {
+  border-radius: 5px 0 0 0;
+}
+#rightSideContainer .controlsContainer .typeButtonsContainer .typeButton:nth-child(5) {
+  border-radius: 0 5px 0 0;
+}
+#rightSideContainer .controlsContainer .typeButtonsContainer .typeButton:nth-child(11) {
+  border-radius: 0 0 0 5px;
+}
+#rightSideContainer .controlsContainer .typeButtonsContainer .typeButton:nth-child(15) {
+  border-radius: 0 0 5px 0;
+}
+#rightSideContainer .controlsContainer .buttonsContainer {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15%;
+}
+#rightSideContainer .controlsContainer .buttonsContainer .leftButtons {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#rightSideContainer .controlsContainer .buttonsContainer .leftButtons .button {
+  width: 50%;
+  height: 50%;
+  background-color: gray;
+  border: 3px solid rgb(46, 46, 46);
+  margin-bottom: auto;
+  border-radius: 5px;
+}
+#rightSideContainer .controlsContainer .buttonsContainer .rightButtons {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15%;
+}
+#rightSideContainer .controlsContainer .buttonsContainer .rightButtons .slimButtons {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+}
+#rightSideContainer .controlsContainer .buttonsContainer .rightButtons .slimButtons .slimButton {
+  height: 100%;
+  width: 50%;
+  background-color: black;
+  border-radius: 30px;
+}
+#rightSideContainer .controlsContainer .buttonsContainer .rightButtons .roundButton {
+  height: 80%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: orange;
+}
+#rightSideContainer .controlsContainer .speakersContainer {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15%;
+}
+#rightSideContainer .controlsContainer .speakersContainer .speaker {
   width: 50%;
   height: 100%;
-  border: 2px solid lime;
-  background-color: rgba(0, 255, 0, 0.3);
-  background: orange;
+  background-color: black;
+  border-radius: 5px;
 }/*# sourceMappingURL=styles.css.map */
