@@ -274,12 +274,47 @@ body {
   background-color: red;
 }
 #leftSideContainer .displayContainer .controls .panels .panel {
-  width: 80%;
-  height: 40%;
+  width: 100%;
+  height: 70%;
   margin-top: 10%;
   background-color: green;
   border-radius: 5px;
   border: 2px solid black;
+  padding: 5px;
+}
+#leftSideContainer .displayContainer .controls .panels .panel .pokemonNameInput {
+  width: 100%;
+  height: 20%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  border-bottom: 1px solid white;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+#leftSideContainer .displayContainer .controls .panels .panel .pokemonNameInput::-moz-placeholder {
+  color: white;
+}
+#leftSideContainer .displayContainer .controls .panels .panel .pokemonNameInput::placeholder {
+  color: white;
+}
+#leftSideContainer .displayContainer .controls .panels .panel .pokemonOptions {
+  width: 100%;
+  height: 80%;
+  list-style: none;
+  color: white;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+#leftSideContainer .displayContainer .controls .panels .panel .pokemonOptions::-webkit-scrollbar {
+  display: none;
+}
+#leftSideContainer .displayContainer .controls .panels .panel .pokemonOptions li {
+  font-size: 0.8rem;
+  text-transform: capitalize;
 }
 #leftSideContainer .displayContainer .controls .cross {
   height: 100%;
