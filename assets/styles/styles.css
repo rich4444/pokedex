@@ -385,6 +385,12 @@ body {
   border-radius: 5px;
   color: white;
   padding: 5%;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+#rightSideContainer .controlsContainer .textDisplay::-webkit-scrollbar {
+  display: none;
 }
 #rightSideContainer .controlsContainer .typeButtonsContainer {
   height: 30%;
@@ -399,6 +405,18 @@ body {
   height: 33.33333333%;
   background-color: cyan;
   border: 3px solid rgb(8, 110, 110);
+  display: flex;
+  padding: 2px;
+  filter: grayscale(0.8) brightness(0.5);
+}
+#rightSideContainer .controlsContainer .typeButtonsContainer .typeButton.selectedType {
+  filter: grayscale(0);
+}
+#rightSideContainer .controlsContainer .typeButtonsContainer .typeButton img {
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: auto;
 }
 #rightSideContainer .controlsContainer .typeButtonsContainer .typeButton:nth-child(1) {
   border-radius: 5px 0 0 0;
@@ -434,6 +452,11 @@ body {
   border: 3px solid rgb(46, 46, 46);
   margin-bottom: auto;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: clamp(0.1rem, 0.5vw + 0.5vh + 0.5vmin, 1.5rem);
 }
 #rightSideContainer .controlsContainer .buttonsContainer .rightButtons {
   height: 100%;
